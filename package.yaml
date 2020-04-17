@@ -1,0 +1,46 @@
+name:                asteroids-gloss
+version:             0.1.0.0
+github:              "Titanothere/asteroids-gloss"
+license:             BSD3
+author:              "Brage Salhus Bunk"
+maintainer:          "bragesb@gmail.com"
+copyright:           "All rights reserved"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+synopsis: A simple Asteroids clone made with gloss
+category: games
+
+description: Please see the README on GitHub at <https://github.com/Titanothere/asteroids-gloss#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- gloss
+- lens
+
+library:
+  source-dirs: src
+
+executables:
+  asteroids-gloss-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - asteroids-gloss
+
+tests:
+  asteroids-gloss-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - asteroids-gloss
