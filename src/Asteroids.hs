@@ -16,16 +16,18 @@ import qualified Graphics.Gloss.Data.Point.Arithmetic   as Pt
 import           Control.Lens
 import           Control.Applicative
 
-data GameState = 
+data GameState =
   GameState { _playerShip :: Ship
             , _asteroids :: [Asteroid]
             , _projectiles :: [Projectile]
             }
 
-data Ship = 
-  Ship { _shipPosition :: Point
-       , _shipVelocity :: Vector
-       , _shipRotation :: Float
+data Ship =
+  Ship { _shipPosition     :: Point
+       , _shipVelocity     :: Vector
+       , _shipRotation     :: Float
+       , _shipAccelerating :: Bool
+       , _shipAcceleration :: Float
        }
 
 data Asteroid = 
@@ -37,7 +39,7 @@ data Asteroid =
 
 data ASize = Small | Medium | Large
 
-data Projectile = 
+data Projectile =
   Projectile { _projectilePosition :: Point
              , _projectileVelocity :: Vector
              , _projectileRotation :: Float
@@ -69,7 +71,13 @@ instance GameObject Projectile where
   rotation = projectileRotation
 
 newShip :: Ship
-newShip = Ship (0,0) (0,0) 0
+newShip =
+  Ship { _shipPosition     = (0, 0)
+       , _shipVelocity     = (0, 0)
+       , _shipRotation     = 0
+       , _shipAccelerating = False
+       , _shipAcceleration = 0
+       }
 
 drawShip :: Ship -> Picture
 drawShip ship = translate x y 

@@ -4,11 +4,13 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 11688a88d1ff1b69597dd95eff2f1f4ad55c773e7873707a09a26386154ffb83
+-- hash: d3e512c5d8d34e20c588f897062cb1e7997a2ed68109952dbf2ab148f14cdd62
 
 name:           asteroids-gloss
 version:        0.1.0.0
+synopsis:       A simple Asteroids clone made with gloss
 description:    Please see the README on GitHub at <https://github.com/Titanothere/asteroids-gloss#readme>
+category:       games
 homepage:       https://github.com/Titanothere/asteroids-gloss#readme
 bug-reports:    https://github.com/Titanothere/asteroids-gloss/issues
 author:         Brage Salhus Bunk
